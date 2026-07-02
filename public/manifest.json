@@ -1,0 +1,33 @@
+{
+  "name": "UniPathKE",
+  "short_name": "UniPathKE",
+  "description": "Kenya's complete KUCCPS pathway guide for every KCSE grade level",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#004D40",
+  "theme_color": "#004D40",
+  "categories": ["education", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Enter Grades",
+      "short_name": "Grades",
+      "description": "Jump straight to grade entry",
+      "url": "/"
+    }
+  ]
+}

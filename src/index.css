@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: Georgia, serif;
+  }
+
+  /* Force light backgrounds on all cards */
+  div[style*="background"] {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Page layout */
+  @page {
+    margin: 16mm 12mm;
+    size: A4;
+  }
+
+  /* Keep cards from splitting across pages */
+  [class~="card"], div > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Print header injected before content */
+  body::before {
+    content: "UniPathKE — KCSE Pathway Summary";
+    display: block;
+    font-size: 22px;
+    font-weight: 900;
+    color: #004D40;
+    border-bottom: 3px solid #004D40;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+
+  /* Hide buttons and interactive elements */
+  button,
+  select {
+    display: none !important;
+  }
+
+  /* Show select values as text */
+  select::after {
+    content: attr(value);
+  }
+
+  /* Ensure full width */
+  div[style*="max-width"] {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Remove sticky positioning */
+  div[style*="sticky"] {
+    position: static !important;
+  }
+
+  /* Remove shadows and borders for cleaner print */
+  div[style*="box-shadow"] {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* Gradient backgrounds: fallback to solid */
+  div[style*="linear-gradient"] {
+    background: #004D40 !important;
+    color: #fff !important;
+  }
+}
