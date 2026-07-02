@@ -4,7 +4,7 @@ const GRADE_POINTS = {"A":12,"A-":11,"B+":10,"B":9,"B-":8,"C+":7,"C":6,"C-":5,"D
 const ALL_GRADES = ["A","A-","B+","B","B-","C+","C","C-","D+","D","D-","E"];
 
 const SUBJECTS = {
-  "Languages & Maths": ["English","Kiswahili","Mathematics (Alt A)","Mathematics (Alt B)"],
+  "Languages & Maths": ["Mathematics","English","Kiswahili"],
   "Sciences": ["Biology","Physics","Chemistry","General Science"],
   "Humanities & Technical": ["History & Government","Geography","CRE","IRE","HRE","Home Science","Art & Design","Agriculture","Woodwork","Metalwork","Building & Construction","Power Mechanics","Electricity","Drawing & Design","Business Studies"],
   "Applied & Languages": ["French","German","Arabic","Music","Computer Studies","Entrepreneurship"],
@@ -21,8 +21,8 @@ const KUCCPS_DATES = [
 
 const DEG_CLUSTERS = [
   {id:"D1",name:"Engineering & Technology",icon:"⚙️",color:"#1565C0",desc:"Civil, Mechanical, Electrical, Software, Chemical, Mechatronics",meanMin:7,cutoff:42,
-   mandatory:{"Mathematics (Alt A)":"C","Mathematics (Alt B)":"C","Physics":"C"},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)"],["Physics"],["Chemistry","Biology","Geography","Computer Studies"]],
+   mandatory:{" Mathematics ":"C","Mathematics (Alt B)":"C","Physics":"C"},
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)"],["Physics"],["Chemistry","Biology","Geography","Computer Studies"]],
    fees:{gov:"Ksh 60,000–150,000/yr",self:"Ksh 200,000–400,000/yr",duration:"4–5 years"},
    progs:[
      {name:"BSc Civil Engineering",unis:["University of Nairobi ~44.5","JKUAT ~43.8","Dedan Kimathi University of Technology ~40.2","Moi University ~38.9","Technical University of Kenya (TUK) ~37.5","Technical University of Mombasa (TUM) ~36.8","Masinde Muliro University ~36.2","Kabarak University ~35.1","Murang'a University of Technology ~34.5","Pan Africa University ~43.0","Maseno University ~34.1"]},
@@ -35,7 +35,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D2",name:"Medicine & Health Sciences",icon:"🏥",color:"#B71C1C",desc:"Medicine, Nursing, Pharmacy, Physiotherapy, Public Health",meanMin:9,cutoff:45,
    mandatory:{"Biology":"B-","Chemistry":"B-"},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","Physics"],["Biology"],["Chemistry"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","Physics"],["Biology"],["Chemistry"]],
    fees:{gov:"Ksh 80,000–200,000/yr",self:"Ksh 300,000–600,000/yr",duration:"5–6 years (MBChB)"},
    progs:[
      {name:"MBChB Medicine & Surgery",unis:["University of Nairobi ~47.8","Moi University ~46.5","Kenyatta University ~46.1","Egerton University ~45.3","Maseno University ~45.5","Aga Khan University ~47.0","Mount Kenya University ~44.5","Kabarak University ~44.2"]},
@@ -48,8 +48,8 @@ const DEG_CLUSTERS = [
      {name:"BSc Nutrition & Dietetics",unis:["Kenyatta University ~39.5","JKUAT ~38.8","Maseno University ~36.5","Moi University ~37.2","Egerton University ~37.8","Masinde Muliro University ~35.1","University of Embu ~34.5"]},
    ]},
   {id:"D3",name:"Computing & IT",icon:"💻",color:"#006064",desc:"Computer Science, IT, Data Science, Cybersecurity, AI",meanMin:7,cutoff:38,
-   mandatory:{"Mathematics (Alt A)":"C","Mathematics (Alt B)":"C"},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)"],["Physics","Chemistry","Computer Studies","Geography"],["Physics","Chemistry","Computer Studies","Geography","Biology","Business Studies"]],
+   mandatory:{" Mathematics ":"C","Mathematics (Alt B)":"C"},
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)"],["Physics","Chemistry","Computer Studies","Geography"],["Physics","Chemistry","Computer Studies","Geography","Biology","Business Studies"]],
    fees:{gov:"Ksh 50,000–100,000/yr",self:"Ksh 150,000–300,000/yr",duration:"4 years"},
    progs:[
      {name:"BSc Computer Science",unis:["University of Nairobi ~40.5","Strathmore University ~39.8","JKUAT ~38.6","Kenyatta University ~36.2","Maseno University ~34.1","Moi University ~35.8","Dedan Kimathi University of Technology ~37.2","Technical University of Kenya (TUK) ~35.5","Masinde Muliro University ~33.8","Kisii University ~32.5","Catholic University of Eastern Africa ~34.5","Kabarak University ~33.2","Jaramogi Oginga Odinga University ~32.1","Multimedia University of Kenya ~33.5","Mount Kenya University ~30.5","Africa Nazarene University ~31.5","Kibabii University ~30.8","University of Eastern Africa Baraton ~29.5"]},
@@ -61,7 +61,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D4",name:"Business & Economics",icon:"📊",color:"#E65100",desc:"Commerce, Economics, Finance, Accounting, HRM, Actuarial Science",meanMin:7,cutoff:36,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)"],["Business Studies","Entrepreneurship","Geography","History & Government"],["Business Studies","Geography","History & Government","Computer Studies"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)"],["Business Studies","Entrepreneurship","Geography","History & Government"],["Business Studies","Geography","History & Government","Computer Studies"]],
    fees:{gov:"Ksh 40,000–80,000/yr",self:"Ksh 100,000–250,000/yr",duration:"4 years"},
    progs:[
      {name:"Bachelor of Commerce",unis:["University of Nairobi ~38.5","Kenyatta University ~36.8","Strathmore University ~37.2","Egerton University ~34.1","Mount Kenya University ~28.3","USIU-Africa ~37.5","KCA University ~33.2","Moi University ~35.5","JKUAT ~35.1","Maseno University ~33.8","Kisii University ~30.5","Masinde Muliro University ~31.2","Kenya Methodist University ~32.5","Kabarak University ~32.1","Catholic University of Eastern Africa ~33.8","Daystar University ~34.5","Africa Nazarene University ~31.5","Scott Christian University ~28.5","Jaramogi Oginga Odinga University ~30.2","Rongo University ~28.8","Machakos University ~29.5","University of Embu ~30.1","Chuka University ~29.8","Karatina University ~29.2","Laikipia University ~28.5","Cooperative University of Kenya ~31.5","Pioneer International University ~30.5","Zetech University ~27.5","Kibabii University ~29.8","Murang'a University of Technology ~29.1","South Eastern Kenya University ~28.8","Tom Mboya University ~27.5","Great Lakes University of Kisumu ~28.2","University of Kabianga ~28.5","Alupe University ~27.8","Presbyterian University of East Africa ~29.5","St. Paul's University ~30.2","Adventist University of Africa ~28.5","University of Eastern Africa Baraton ~28.1","Pan Africa Christian University ~29.8"]},
@@ -73,12 +73,12 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D5",name:"Law",icon:"⚖️",color:"#263238",desc:"Bachelor of Laws (LLB)",meanMin:7,cutoff:44,
    mandatory:{"English":"C+"},
-   slots:[["English"],["Kiswahili","History & Government","CRE","IRE","Mathematics (Alt A)","Mathematics (Alt B)"],["History & Government","CRE","IRE","Geography","Business Studies"],["History & Government","CRE","IRE","Geography","Business Studies","French","German","Arabic"]],
+   slots:[["English"],["Kiswahili","History & Government","CRE","IRE"," Mathematics ","Mathematics (Alt B)"],["History & Government","CRE","IRE","Geography","Business Studies"],["History & Government","CRE","IRE","Geography","Business Studies","French","German","Arabic"]],
    fees:{gov:"Ksh 50,000–90,000/yr",self:"Ksh 150,000–350,000/yr",duration:"4 years"},
    progs:[{name:"Bachelor of Laws (LLB)",unis:["University of Nairobi ~46.2","Kenyatta University ~45.1","Moi University ~44.6","Strathmore University ~45.8","Mount Kenya University ~42.1","Kabarak University ~41.5","Catholic University of Eastern Africa ~43.2","USIU-Africa ~44.5","Africa Nazarene University ~41.8","Daystar University ~43.5","Pioneer International University ~40.5","Kenya Methodist University ~40.8","St. Paul's University ~40.1","Great Lakes University of Kisumu ~38.5","Adventist University of Africa ~39.2","Presbyterian University of East Africa ~39.8"]}]},
   {id:"D6",name:"Architecture & Built Environment",icon:"🏗️",color:"#4A148C",desc:"Architecture, Quantity Surveying, Urban Planning, Land Economics, Real Estate",meanMin:7,cutoff:38,
-   mandatory:{"Mathematics (Alt A)":"C","Mathematics (Alt B)":"C"},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)"],["Physics","Building & Construction","Drawing & Design"],["Chemistry","Geography","Art & Design","Biology"]],
+   mandatory:{" Mathematics ":"C","Mathematics (Alt B)":"C"},
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)"],["Physics","Building & Construction","Drawing & Design"],["Chemistry","Geography","Art & Design","Biology"]],
    fees:{gov:"Ksh 50,000–110,000/yr",self:"Ksh 150,000–300,000/yr",duration:"5 years (Architecture)"},
    progs:[
      {name:"Bachelor of Architecture",unis:["University of Nairobi ~41.2","JKUAT ~40.0","Technical University of Kenya (TUK) ~37.5","Maseno University ~36.2","Moi University ~35.8"]},
@@ -90,7 +90,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D7",name:"Education",icon:"📚",color:"#00695C",desc:"Education Arts, Education Science, Special Needs, Early Childhood, Technical Education",meanMin:7,cutoff:35,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","Biology","Physics","Chemistry","History & Government","Geography"],["Mathematics (Alt A)","Mathematics (Alt B)","Biology","Physics","Chemistry","History & Government","Geography","CRE","IRE","Agriculture","Business Studies"],["Mathematics (Alt A)","Biology","Physics","Chemistry","History & Government","Geography","CRE","IRE","Home Science","Computer Studies","Music","Art & Design"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","Biology","Physics","Chemistry","History & Government","Geography"],[" Mathematics ","Mathematics (Alt B)","Biology","Physics","Chemistry","History & Government","Geography","CRE","IRE","Agriculture","Business Studies"],[" Mathematics ","Biology","Physics","Chemistry","History & Government","Geography","CRE","IRE","Home Science","Computer Studies","Music","Art & Design"]],
    fees:{gov:"Ksh 35,000–70,000/yr",self:"Ksh 80,000–180,000/yr",duration:"4 years"},
    progs:[
      {name:"BEd Arts",unis:["Kenyatta University ~36.2","Moi University ~35.5","Masinde Muliro University ~33.1","Maseno University ~32.8","Kisii University ~30.5","Egerton University ~34.2","University of Eldoret ~31.8","South Eastern Kenya University ~30.2","Chuka University ~29.8","Rongo University ~29.5","Pwani University ~29.1","Jaramogi Oginga Odinga University ~30.5","Catholic University of Eastern Africa ~32.5","Daystar University ~33.1","Africa Nazarene University ~31.2","Kenya Methodist University ~30.8","Scott Christian University ~28.5","Pan Africa Christian University ~29.2","Machakos University ~29.5","Laikipia University ~28.8","Kibabii University ~29.1","Tom Mboya University ~29.5","Taita Taveta University ~28.5","Garissa University ~28.1","Alupe University ~28.2","University of Eastern Africa Baraton ~28.5","University of Kabianga ~28.8","Maasai Mara University ~28.2","Murang'a University of Technology ~28.5","Bomet University College ~27.8","Tharaka University ~27.5"]},
@@ -101,7 +101,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D8",name:"Social Sciences & Arts",icon:"🎓",color:"#2E7D32",desc:"Sociology, Psychology, Political Science, International Relations, Criminology",meanMin:7,cutoff:34,
    mandatory:{},
-   slots:[["English","Kiswahili"],["History & Government","Geography","CRE","IRE","Mathematics (Alt A)","Mathematics (Alt B)","Business Studies"],["History & Government","Geography","CRE","IRE","Mathematics (Alt A)","Biology","Business Studies"],["History & Government","Geography","CRE","IRE","French","German","Arabic","Music","Computer Studies"]],
+   slots:[["English","Kiswahili"],["History & Government","Geography","CRE","IRE"," Mathematics ","Mathematics (Alt B)","Business Studies"],["History & Government","Geography","CRE","IRE"," Mathematics ","Biology","Business Studies"],["History & Government","Geography","CRE","IRE","French","German","Arabic","Music","Computer Studies"]],
    fees:{gov:"Ksh 35,000–65,000/yr",self:"Ksh 80,000–180,000/yr",duration:"4 years"},
    progs:[
      {name:"BA Sociology",unis:["University of Nairobi ~35.2","Kenyatta University ~34.8","Moi University ~33.1","Maseno University ~31.5","Egerton University ~32.8","USIU-Africa ~35.5","Catholic University of Eastern Africa ~32.5","Daystar University ~33.8","Masinde Muliro University ~30.5","Kisii University ~29.8","Jaramogi Oginga Odinga University ~29.5","Rongo University ~28.5","Tom Mboya University ~27.8","Pwani University ~28.5"]},
@@ -113,7 +113,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D9",name:"Agriculture & Natural Sciences",icon:"🌱",color:"#33691E",desc:"Agriculture, Food Science, Environmental Science, Fisheries, Forestry",meanMin:7,cutoff:36,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","Biology","Agriculture"],["Biology","Chemistry","Physics","Agriculture","Geography"],["Biology","Chemistry","Physics","Agriculture","Geography","Mathematics (Alt A)"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","Biology","Agriculture"],["Biology","Chemistry","Physics","Agriculture","Geography"],["Biology","Chemistry","Physics","Agriculture","Geography"," Mathematics "]],
    fees:{gov:"Ksh 40,000–80,000/yr",self:"Ksh 100,000–200,000/yr",duration:"4 years"},
    progs:[
      {name:"BSc Agriculture",unis:["Egerton University ~36.5","University of Nairobi ~37.8","Moi University ~35.2","Maseno University ~33.8","JKUAT ~36.1","Masinde Muliro University ~32.5","University of Embu ~31.8","Chuka University ~31.5","Pwani University ~30.8","South Eastern Kenya University ~30.5","Laikipia University ~29.8","Kibabii University ~30.1","Rongo University ~29.5","Tom Mboya University ~29.2","Taita Taveta University ~29.1","Maasai Mara University ~28.8","University of Kabianga ~29.5","Kabarak University ~31.2","Tharaka University ~27.8","Garissa University ~27.5","Alupe University ~27.8"]},
@@ -125,8 +125,8 @@ const DEG_CLUSTERS = [
      {name:"BSc Horticulture",unis:["Egerton University ~35.1","University of Nairobi ~36.2","Jomo Kenyatta University of Agriculture & Technology ~35.5","Maseno University ~32.5","University of Embu ~30.8","Chuka University ~30.2"]},
    ]},
   {id:"D10",name:"Pure & Mathematical Sciences",icon:"🔬",color:"#01579B",desc:"Mathematics, Physics, Statistics, Biochemistry, Chemistry, Biotechnology",meanMin:7,cutoff:40,
-   mandatory:{"Mathematics (Alt A)":"B-","Mathematics (Alt B)":"B-"},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)"],["Physics","Chemistry","Biology"],["Physics","Chemistry","Biology","Geography","Computer Studies"]],
+   mandatory:{" Mathematics ":"B-","Mathematics (Alt B)":"B-"},
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)"],["Physics","Chemistry","Biology"],["Physics","Chemistry","Biology","Geography","Computer Studies"]],
    fees:{gov:"Ksh 40,000–80,000/yr",self:"Ksh 100,000–220,000/yr",duration:"4 years"},
    progs:[
      {name:"BSc Mathematics",unis:["University of Nairobi ~40.5","Kenyatta University ~39.1","Maseno University ~36.8","Egerton University ~37.5","Moi University ~37.2","JKUAT ~38.5","Masinde Muliro University ~34.5","Kisii University ~32.8","Catholic University of Eastern Africa ~35.1","Kabarak University ~34.2","Chuka University ~31.5","University of Embu ~31.8","South Eastern Kenya University ~30.5","Pwani University ~30.2","Jaramogi Oginga Odinga University ~31.1","Laikipia University ~29.8"]},
@@ -138,7 +138,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D11",name:"Communication & Media",icon:"📺",color:"#AD1457",desc:"Journalism, Mass Communication, Film, Public Relations, Advertising",meanMin:7,cutoff:34,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","History & Government","Geography","Biology"],["History & Government","Geography","CRE","IRE","Business Studies","Biology","Computer Studies"],["History & Government","Geography","CRE","Business Studies","Music","Art & Design","Computer Studies"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","History & Government","Geography","Biology"],["History & Government","Geography","CRE","IRE","Business Studies","Biology","Computer Studies"],["History & Government","Geography","CRE","Business Studies","Music","Art & Design","Computer Studies"]],
    fees:{gov:"Ksh 40,000–75,000/yr",self:"Ksh 100,000–220,000/yr",duration:"4 years"},
    progs:[
      {name:"BA Communication & Journalism",unis:["University of Nairobi ~35.6","Daystar University ~34.5","USIU-Africa ~36.1","Moi University ~33.2","Kenyatta University ~34.8","Catholic University of Eastern Africa ~33.5","Kenya Methodist University ~32.1","Africa Nazarene University ~31.5","Maseno University ~30.8","Pan Africa Christian University ~31.2","Multimedia University of Kenya ~32.5","Mount Kenya University ~29.5","Scott Christian University ~28.5","Masinde Muliro University ~30.2","Kisii University ~29.5","Jaramogi Oginga Odinga University ~29.1"]},
@@ -148,7 +148,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D12",name:"Veterinary Medicine",icon:"🐾",color:"#827717",desc:"Veterinary Medicine, Animal Health & Production",meanMin:8,cutoff:44,
    mandatory:{"Biology":"C+","Chemistry":"C+"},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","Physics"],["Biology"],["Chemistry"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","Physics"],["Biology"],["Chemistry"]],
    fees:{gov:"Ksh 70,000–160,000/yr",self:"Ksh 250,000–500,000/yr",duration:"5 years"},
    progs:[
      {name:"Bachelor of Veterinary Medicine (BVM)",unis:["University of Nairobi ~46.5","Egerton University ~45.2","Moi University ~44.8"]},
@@ -156,7 +156,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D13",name:"Tourism & Hospitality",icon:"✈️",color:"#F57F17",desc:"Tourism Management, Hotel Management, Events, Culinary Arts",meanMin:6,cutoff:32,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","Biology","Geography","History & Government"],["Biology","Geography","History & Government","Business Studies","Home Science","Chemistry"],["Biology","Geography","Business Studies","Home Science","French","German","Computer Studies"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","Biology","Geography","History & Government"],["Biology","Geography","History & Government","Business Studies","Home Science","Chemistry"],["Biology","Geography","Business Studies","Home Science","French","German","Computer Studies"]],
    fees:{gov:"Ksh 35,000–70,000/yr",self:"Ksh 80,000–180,000/yr",duration:"4 years"},
    progs:[
      {name:"BSc Travel & Tourism Management",unis:["Kenyatta University ~33.1","Moi University ~32.5","Mount Kenya University ~28.2","Maseno University ~30.8","Pwani University ~29.5","Taita Taveta University ~28.8","Technical University of Mombasa (TUM) ~30.5","Kisii University ~28.5","Maasai Mara University ~27.8","South Eastern Kenya University ~27.5","USIU-Africa ~34.2","Daystar University ~32.8"]},
@@ -165,7 +165,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D14",name:"Fine Arts, Design & Music",icon:"🎨",color:"#6A1B9A",desc:"Fine Art, Graphic Design, Fashion, Music, Animation",meanMin:6,cutoff:30,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)","Art & Design","Music","History & Government"],["Art & Design","Music","Home Science","History & Government","Geography","Biology"],["Art & Design","Music","Home Science","Geography","CRE","Business Studies","Computer Studies"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)","Art & Design","Music","History & Government"],["Art & Design","Music","Home Science","History & Government","Geography","Biology"],["Art & Design","Music","Home Science","Geography","CRE","Business Studies","Computer Studies"]],
    fees:{gov:"Ksh 35,000–65,000/yr",self:"Ksh 80,000–180,000/yr",duration:"4 years"},
    progs:[
      {name:"BA Fine Art",unis:["Kenyatta University ~29.5","Technical University of Kenya (TUK) ~27.8","Moi University ~27.5","University of Nairobi ~30.1","Maseno University ~26.8"]},
@@ -176,7 +176,7 @@ const DEG_CLUSTERS = [
    ]},
   {id:"D15",name:"Geosciences & Environment",icon:"🌍",color:"#4E342E",desc:"Geology, Mining, Meteorology, Hydrology, Water Resources",meanMin:7,cutoff:36,
    mandatory:{},
-   slots:[["English","Kiswahili"],["Mathematics (Alt A)","Mathematics (Alt B)"],["Physics","Chemistry","Geography","Biology"],["Physics","Chemistry","Geography","Biology","Agriculture"]],
+   slots:[["English","Kiswahili"],[" Mathematics ","Mathematics (Alt B)"],["Physics","Chemistry","Geography","Biology"],["Physics","Chemistry","Geography","Biology","Agriculture"]],
    fees:{gov:"Ksh 45,000–85,000/yr",self:"Ksh 120,000–240,000/yr",duration:"4 years"},
    progs:[
      {name:"BSc Geology",unis:["University of Nairobi ~37.5","Maseno University ~34.2","South Eastern Kenya University ~30.5","Technical University of Kenya (TUK) ~33.8","Egerton University ~34.5","Taita Taveta University ~29.5"]},
@@ -259,7 +259,7 @@ function analyzeCluster(c,grades){
   if(filled<4){qualifies=false;reasons.push(`Only ${filled}/4 cluster subjects available`);}
   if(meanPts<c.meanMin){qualifies=false;reasons.push("Mean grade too low");}
   Object.entries(c.mandatory||{}).forEach(([s,mg])=>{
-    const altS=s.includes("Alt A")?"Mathematics (Alt B)":s.includes("Alt B")?"Mathematics (Alt A)":null;
+    const altS=s.includes("Alt A")?"Mathematics (Alt B)":s.includes("Alt B")?" Mathematics ":null;
     const g=grades[s]||(altS&&grades[altS]);
     if(!g||gp(g)<gp(mg)){qualifies=false;reasons.push(`Need ${mg} in ${s.replace(/ \(Alt [AB]\)/," Maths")}`);}
   });
